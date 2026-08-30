@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — BurgerBalanceCafe</title>
+<meta name="description" content="Log in to your BurgerBalanceCafe account to track orders and save your favorites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-login" aria-current="page">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding:60px 0 50px;">
+  <div class="wrap" style="grid-template-columns:1fr; text-align:left;">
+    <div class="hero-copy">
+      <span class="eyebrow">Welcome back</span>
+      <h1>Login</h1>
+      <p class="hero-sub">Sign in to track your orders and save your go-to build on either side of the menu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="wrap auth-wrap">
+    <div class="auth-card">
+      <h1>Sign in</h1>
+      <p class="hero-sub">Enter your details to access your account.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-identifier">Email or Phone Number</label>
+          <input type="text" id="login-identifier" name="identifier" placeholder="you@example.com or 98765 43210" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" required autocomplete="current-password">
+        </div>
+        <div class="field-row">
+          <label><input type="checkbox" id="remember-me" name="remember" style="width:auto;"> Remember me</label>
+          <a href="#" id="forgot-password-link">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-flame">Log in</button>
+        <p id="login-note" class="form-note" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

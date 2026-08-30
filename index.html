@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BurgerBalanceCafe — Bold flavor, honest portions</title>
+<meta name="description" content="BurgerBalanceCafe is a fast-food joint built on one idea: you shouldn't have to choose between a burger that hits hard and one that treats you right.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-login">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Est. in a city that eats fast, thinks slow</span>
+      <h1>Every burger<br>picks a side of the<br><span class="flame-word">Flame</span> or the <span class="balance-word">Balance</span>.</h1>
+      <p class="hero-sub">We grill two menus under one roof: the loaded, no-apologies classics, and the lighter builds that still taste like you didn't compromise. You choose where the needle lands.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn btn-flame">See the menu</a>
+        <a href="about.html" class="btn btn-outline">Our philosophy</a>
+      </div>
+    </div>
+
+    <div class="scale-figure">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a balance scale weighing a loaded burger against a lighter, balanced burger">
+        <!-- stand -->
+        <line x1="200" y1="60" x2="200" y2="270" stroke="#FFFFFF" stroke-width="4"/>
+        <polygon points="160,270 240,270 220,300 180,300" fill="#1A1A1A"/>
+        <circle cx="200" cy="60" r="7" fill="#FFC72C"/>
+        <!-- beam, tilted toward flame side -->
+        <line x1="70" y1="95" x2="330" y2="60" stroke="#FFFFFF" stroke-width="4"/>
+        <!-- left chains (flame, lower) -->
+        <line x1="70" y1="95" x2="55" y2="150" stroke="#FFD9D9" stroke-width="2"/>
+        <line x1="70" y1="95" x2="95" y2="150" stroke="#FFD9D9" stroke-width="2"/>
+        <ellipse cx="75" cy="160" rx="55" ry="10" fill="#1A1A1A"/>
+        <!-- flame burger stack -->
+        <rect x="35" y="120" width="80" height="16" rx="8" fill="#FFC72C"/>
+        <rect x="30" y="136" width="90" height="12" rx="4" fill="#1A1A1A"/>
+        <rect x="35" y="148" width="80" height="10" rx="4" fill="#FFC72C"/>
+        <rect x="30" y="158" width="90" height="12" rx="4" fill="#1A1A1A"/>
+        <rect x="38" y="170" width="74" height="14" rx="7" fill="#FFC72C"/>
+
+        <!-- right chains (balance, higher) -->
+        <line x1="330" y1="60" x2="315" y2="105" stroke="#FFD9D9" stroke-width="2"/>
+        <line x1="330" y1="60" x2="345" y2="105" stroke="#FFD9D9" stroke-width="2"/>
+        <ellipse cx="330" cy="112" rx="48" ry="9" fill="#1A1A1A"/>
+        <!-- balance burger, slimmer -->
+        <rect x="298" y="82" width="64" height="13" rx="6.5" fill="#FFC72C"/>
+        <rect x="294" y="95" width="72" height="9" fill="#FFFFFF"/>
+        <rect x="298" y="104" width="64" height="9" rx="4" fill="#1A1A1A"/>
+        <rect x="300" y="113" width="60" height="11" rx="5.5" fill="#FFC72C"/>
+      </svg>
+      <p class="scale-caption">Flame side, heavier · Balance side, lighter — pick your tilt</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Balance</span>
+      <h2>Two menus, one standard.</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="num">01</span>
+        <h3>Bold flavor, no shortcuts</h3>
+        <p>Smash-grilled patties, toasted buns, sauces built in-house. The Flame side never gets watered down for anyone.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">02</span>
+        <h3>Real ingredients, plainly listed</h3>
+        <p>Every Balance build shows its calories and macros on the menu. No fine print, no guessing.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">03</span>
+        <h3>Fair portions, fair prices</h3>
+        <p>You size the meal, not the marketing. Small, standard, and stacked — same quality at every size.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-line">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A taste of the menu</span>
+      <h2>Pick your tilt.</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="dish">
+        <img class="dish-img" src="double-tip.jpg" alt="The Double Tip">
+      <span class="tag tag-flame">Flame side</span>
+        <div class="dish-top"><h3>The Double Tip</h3><span class="dish-price">₹289</span></div>
+        <p>Two smashed patties, cheddar, caramelized onion, smoked mayo.</p>
+      </div>
+      <div class="dish">
+        <img class="dish-img" src="lean-sesame-grill.jpg" alt="Lean Sesame Grill">
+      <span class="tag tag-balance">Balance side</span>
+        <div class="dish-top"><h3>Lean Sesame Grill</h3><span class="dish-price">₹239</span></div>
+        <p>Grilled chicken patty, slaw, light yogurt sauce, whole-wheat bun. 420 kcal.</p>
+      </div>
+      <div class="dish">
+        <img class="dish-img" src="balance-original.jpg" alt="Balance Original">
+      <span class="tag tag-flame">Flame side</span>
+        <div class="dish-top"><h3>Balance Original</h3><span class="dish-price">₹199</span></div>
+        <p>Our founding burger — one patty, classic toppings, house sauce.</p>
+      </div>
+    </div>
+    <div style="margin-top:40px; text-align:center;">
+      <a href="menu.html" class="btn btn-outline">View the full menu</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Hungry for one, curious about the other?</h2>
+    <p style="max-width:48ch; margin:0 auto 26px;">Come try both sides of the scale — same counter, same day, no judgment.</p>
+    <a href="contact.html" class="btn btn-outline">Find us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

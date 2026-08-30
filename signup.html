@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — BurgerBalanceCafe</title>
+<meta name="description" content="Create your BurgerBalanceCafe account with your email and phone number.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="nav-login">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding:60px 0 50px;">
+  <div class="wrap" style="grid-template-columns:1fr; text-align:left;">
+    <div class="hero-copy">
+      <span class="eyebrow">New here?</span>
+      <h1>Create an account</h1>
+      <p class="hero-sub">Sign up with your email and phone number to start ordering from either side of the menu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="wrap auth-wrap">
+    <div class="auth-card">
+      <h1>Sign up</h1>
+      <p class="hero-sub">It only takes a minute.</p>
+
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="signup-phone">Phone Number</label>
+          <input type="tel" id="signup-phone" name="phone" placeholder="98765 43210" required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" name="password" required autocomplete="new-password" minlength="6">
+        </div>
+        <div class="field">
+          <label for="signup-confirm">Confirm Password</label>
+          <input type="password" id="signup-confirm" name="confirm" required autocomplete="new-password" minlength="6">
+        </div>
+        <button type="submit" class="btn btn-flame">Create account</button>
+        <p id="signup-note" class="form-note" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

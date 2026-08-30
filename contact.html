@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — BurgerBalanceCafe</title>
+<meta name="description" content="Find BurgerBalanceCafe, check our hours, or send us a message.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="login.html" class="nav-login">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding:60px 0 50px;">
+  <div class="wrap" style="grid-template-columns:1fr; text-align:left;">
+    <div class="hero-copy">
+      <span class="eyebrow">Find us</span>
+      <h1>Contact</h1>
+      <p class="hero-sub">Questions, catering, feedback on either side of the menu — send it over.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>14 Grillhouse Lane<br>Andheri West, Mumbai 400058</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon–Fri: 11:00 – 22:30<br>Sat–Sun: 11:00 – 23:30</p>
+      </div>
+      <div class="info-block">
+        <h3>Phone</h3>
+        <p>+91 98765 43210</p>
+      </div>
+      <div class="info-block">
+        <h3>Email</h3>
+        <p>hello@burgerbalancecafe.example</p>
+      </div>
+      <div class="map-lines">
+        Map placeholder — embed Google Maps here with your actual location
+      </div>
+    </div>
+
+    <div>
+      <h2 style="margin-bottom:24px;">Send a message</h2>
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-flame">Send message</button>
+        <p id="form-note" class="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
+      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
