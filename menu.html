@@ -3,188 +3,499 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu — BurgerBalanceCafe</title>
-<meta name="description" content="Browse the full BurgerBalanceCafe menu: Flame-side classics, Balance-side lighter builds, sides, and drinks.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Menu - BurgerBalanceCafe</title>
+<style>
+/* BurgerBalanceCafe - stylesheet */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #b71c1c;
+  padding: 12px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Page title */
+.page-title {
+  background-color: #f2f2f2;
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-title h1 {
+  font-size: 26px;
+  color: #b71c1c;
+}
+
+.page-title p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* Sections */
+section {
+  padding: 30px 0;
+}
+
+h2 {
+  font-size: 20px;
+  color: #b71c1c;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Home banner */
+.banner {
+  background-color: #fff3e0;
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.banner h1 {
+  font-size: 28px;
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  max-width: 600px;
+  margin: 0 auto 15px auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #b71c1c;
+  color: #fff;
+  padding: 9px 16px;
+  border: none;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+  background-color: #8e1616;
+}
+
+/* Boxes (why us section) */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.box {
+  flex: 1 1 250px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fafafa;
+}
+
+/* Menu items */
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.item {
+  flex: 1 1 280px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+.item .price {
+  color: #b71c1c;
+  font-weight: bold;
+}
+
+.item .info {
+  font-size: 13px;
+  color: #777;
+}
+
+.sub-heading {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+/* Tables and lists */
+ul.simple-list {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Contact */
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.two-column > div {
+  flex: 1 1 300px;
+}
+
+.map-box {
+  border: 1px dashed #bbb;
+  background-color: #fafafa;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Forms */
+form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+form textarea {
+  height: 110px;
+}
+
+.form-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 420px;
+  background-color: #fafafa;
+}
+
+.form-note {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.form-note.ok {
+  color: #2e7d32;
+}
+
+.form-note.err {
+  color: #b71c1c;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.form-row a {
+  color: #b71c1c;
+}
+
+.small-text {
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.small-text a {
+  color: #b71c1c;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  border-top: 1px solid #555;
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  header .container {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul {
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html" aria-current="page">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html" class="nav-login">Login</a></li>
-    </ul>
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">BurgerBalanceCafe</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-login">Login</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<section class="hero" style="padding:60px 0 50px;">
-  <div class="wrap" style="grid-template-columns:1fr; text-align:left;">
-    <div class="hero-copy">
-      <span class="eyebrow">The full lineup</span>
-      <h1>Menu</h1>
-      <p class="hero-sub">Flame side for when you want everything. Balance side for when you still want everything, minus the regret. Both sides are made to order.</p>
+<div class="page-title">
+  <div class="container">
+    <h1>Our Menu</h1>
+    <p>All items are made to order.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="sub-heading">Flame Side</h2>
+    <div class="items">
+      <div class="item">
+        <img src="double-tip.jpg" alt="The Double Tip">
+        <h3>The Double Tip</h3>
+        <p class="price">Rs. 289</p>
+        <p>Two smashed patties, cheddar, caramelized onion, smoked mayo, brioche bun.</p>
+      </div>
+      <div class="item">
+        <img src="balance-original.jpg" alt="Balance Original">
+        <h3>Balance Original</h3>
+        <p class="price">Rs. 199</p>
+        <p>One smashed patty, lettuce, tomato, pickle, house sauce.</p>
+      </div>
+      <div class="item">
+        <img src="ember-stack.jpg" alt="Ember Stack">
+        <h3>Ember Stack</h3>
+        <p class="price">Rs. 259</p>
+        <p>Patty, pepper-jack, jalapeno, chipotle mayo, crispy onions.</p>
+      </div>
+      <div class="item">
+        <img src="triple-tip.jpg" alt="Triple Tip">
+        <h3>Triple Tip</h3>
+        <p class="price">Rs. 349</p>
+        <p>Three patties, double cheese, bacon, smoked mayo.</p>
+      </div>
+      <div class="item">
+        <img src="cheese-melt.jpg" alt="Cheese Melt">
+        <h3>Cheese Melt</h3>
+        <p class="price">Rs. 219</p>
+        <p>Patty, double cheddar, grilled onion, mustard-mayo.</p>
+      </div>
+      <div class="item">
+        <img src="smokehouse.jpg" alt="Smokehouse">
+        <h3>Smokehouse</h3>
+        <p class="price">Rs. 269</p>
+        <p>Patty, smoked bacon, BBQ glaze, crispy onions, cheddar.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section-cream">
-  <div class="wrap">
-
-    <div class="menu-category">
-      <div class="menu-category-head">
-        <h2>Flame Side</h2>
-        <span>Loaded classics</span>
+<section>
+  <div class="container">
+    <h2 class="sub-heading">Balance Side</h2>
+    <div class="items">
+      <div class="item">
+        <img src="lean-sesame-grill.jpg" alt="Lean Sesame Grill">
+        <h3>Lean Sesame Grill</h3>
+        <p class="price">Rs. 239</p>
+        <p>Grilled chicken patty, slaw, light yogurt sauce, whole-wheat bun.</p>
+        <p class="info">420 kcal</p>
       </div>
-      <div class="menu-grid">
-        <div class="dish">
-          <img class="dish-img" src="double-tip.jpg" alt="The Double Tip">
-      <span class="tag tag-flame">Signature</span>
-          <div class="dish-top"><h3>The Double Tip</h3><span class="dish-price">₹289</span></div>
-          <p>Two smashed patties, cheddar, caramelized onion, smoked mayo, brioche bun.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="balance-original.jpg" alt="Balance Original">
-      <span class="tag tag-flame">Signature</span>
-          <div class="dish-top"><h3>Balance Original</h3><span class="dish-price">₹199</span></div>
-          <p>One smashed patty, lettuce, tomato, pickle, house sauce.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="ember-stack.jpg" alt="Ember Stack">
-      <span class="tag tag-flame">Spicy</span>
-          <div class="dish-top"><h3>Ember Stack</h3><span class="dish-price">₹259</span></div>
-          <p>Patty, pepper-jack, jalapeño, chipotle mayo, crispy onions.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="triple-tip.jpg" alt="Triple Tip">
-      <span class="tag tag-flame">Loaded</span>
-          <div class="dish-top"><h3>Triple Tip</h3><span class="dish-price">₹349</span></div>
-          <p>Three patties, double cheese, bacon, smoked mayo. For the all-in order.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="cheese-melt.jpg" alt="Cheese Melt">
-      <span class="tag tag-flame">Classic</span>
-          <div class="dish-top"><h3>Cheese Melt</h3><span class="dish-price">₹219</span></div>
-          <p>Patty, double cheddar, grilled onion, mustard-mayo.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="smokehouse.jpg" alt="Smokehouse">
-      <span class="tag tag-flame">BBQ</span>
-          <div class="dish-top"><h3>Smokehouse</h3><span class="dish-price">₹269</span></div>
-          <p>Patty, smoked bacon, BBQ glaze, crispy onions, cheddar.</p>
-        </div>
+      <div class="item">
+        <img src="garden-smash.jpg" alt="Garden Smash">
+        <h3>Garden Smash</h3>
+        <p class="price">Rs. 219</p>
+        <p>Plant patty, grilled zucchini, rocket, herb yogurt, seeded bun.</p>
+        <p class="info">380 kcal</p>
+      </div>
+      <div class="item">
+        <img src="half-stack.jpg" alt="Half Stack">
+        <h3>Half Stack</h3>
+        <p class="price">Rs. 179</p>
+        <p>Single patty, no bun - lettuce wrap, tomato, pickle, light sauce.</p>
+        <p class="info">340 kcal</p>
+      </div>
+      <div class="item">
+        <img src="turkey-balance.jpg" alt="Turkey Balance">
+        <h3>Turkey Balance</h3>
+        <p class="price">Rs. 229</p>
+        <p>Turkey patty, spinach, tomato, low-fat cheese, wholegrain bun.</p>
+        <p class="info">400 kcal</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="menu-category">
-      <div class="menu-category-head">
-        <h2>Balance Side</h2>
-        <span>Lighter builds, calories listed</span>
+<section>
+  <div class="container">
+    <h2 class="sub-heading">Sides</h2>
+    <div class="items">
+      <div class="item">
+        <img src="loaded-fries.jpg" alt="Loaded Fries">
+        <h3>Loaded Fries</h3>
+        <p class="price">Rs. 149</p>
+        <p>Cheese sauce, bacon bits, spring onion.</p>
       </div>
-      <div class="menu-grid">
-        <div class="dish">
-          <img class="dish-img" src="lean-sesame-grill.jpg" alt="Lean Sesame Grill">
-      <span class="tag tag-balance">420 kcal</span>
-          <div class="dish-top"><h3>Lean Sesame Grill</h3><span class="dish-price">₹239</span></div>
-          <p>Grilled chicken patty, slaw, light yogurt sauce, whole-wheat bun.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="garden-smash.jpg" alt="Garden Smash">
-      <span class="tag tag-balance">380 kcal</span>
-          <div class="dish-top"><h3>Garden Smash</h3><span class="dish-price">₹219</span></div>
-          <p>Plant patty, grilled zucchini, rocket, herb yogurt, seeded bun.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="half-stack.jpg" alt="Half Stack">
-      <span class="tag tag-balance">340 kcal</span>
-          <div class="dish-top"><h3>Half Stack</h3><span class="dish-price">₹179</span></div>
-          <p>Single patty, no bun — lettuce wrap, tomato, pickle, light sauce.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="turkey-balance.jpg" alt="Turkey Balance">
-      <span class="tag tag-balance">400 kcal</span>
-          <div class="dish-top"><h3>Turkey Balance</h3><span class="dish-price">₹229</span></div>
-          <p>Turkey patty, spinach, tomato, low-fat cheese, wholegrain bun.</p>
-        </div>
+      <div class="item">
+        <img src="sweet-potato-fries.jpg" alt="Baked Sweet Potato Fries">
+        <h3>Baked Sweet Potato Fries</h3>
+        <p class="price">Rs. 129</p>
+        <p>Oven-baked, sea salt, herb yogurt dip.</p>
+      </div>
+      <div class="item">
+        <img src="side-salad.jpg" alt="Side Salad">
+        <h3>Side Salad</h3>
+        <p class="price">Rs. 99</p>
+        <p>Mixed greens, cherry tomato, citrus dressing.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="menu-category">
-      <div class="menu-category-head">
-        <h2>Sides</h2>
-        <span>Split down the middle too</span>
+<section>
+  <div class="container">
+    <h2 class="sub-heading">Drinks</h2>
+    <div class="items">
+      <div class="item">
+        <img src="classic-cola.jpg" alt="Classic Cola">
+        <h3>Classic Cola</h3>
+        <p class="price">Rs. 79</p>
+        <p>Regular or diet.</p>
       </div>
-      <div class="menu-grid">
-        <div class="dish">
-          <img class="dish-img" src="loaded-fries.jpg" alt="Loaded Fries">
-      <span class="tag tag-flame">Flame side</span>
-          <div class="dish-top"><h3>Loaded Fries</h3><span class="dish-price">₹149</span></div>
-          <p>Cheese sauce, bacon bits, spring onion.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="sweet-potato-fries.jpg" alt="Baked Sweet Potato Fries">
-      <span class="tag tag-balance">Balance side</span>
-          <div class="dish-top"><h3>Baked Sweet Potato Fries</h3><span class="dish-price">₹129</span></div>
-          <p>Oven-baked, sea salt, herb yogurt dip.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="side-salad.jpg" alt="Side Salad">
-      <span class="tag tag-balance">Balance side</span>
-          <div class="dish-top"><h3>Side Salad</h3><span class="dish-price">₹99</span></div>
-          <p>Mixed greens, cherry tomato, citrus dressing.</p>
-        </div>
+      <div class="item">
+        <img src="lime-soda.jpg" alt="Fresh Lime Soda">
+        <h3>Fresh Lime Soda</h3>
+        <p class="price">Rs. 89</p>
+        <p>Sweet, salted, or half-half.</p>
+      </div>
+      <div class="item">
+        <img src="iced-green-tea.jpg" alt="Iced Green Tea">
+        <h3>Iced Green Tea</h3>
+        <p class="price">Rs. 99</p>
+        <p>Unsweetened, lightly brewed.</p>
       </div>
     </div>
-
-    <div class="menu-category">
-      <div class="menu-category-head">
-        <h2>Drinks</h2>
-        <span>Something for both sides</span>
-      </div>
-      <div class="menu-grid">
-        <div class="dish">
-          <img class="dish-img" src="classic-cola.jpg" alt="Classic Cola">
-      <div class="dish-top"><h3>Classic Cola</h3><span class="dish-price">₹79</span></div>
-          <p>Regular or diet.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="lime-soda.jpg" alt="Fresh Lime Soda">
-      <div class="dish-top"><h3>Fresh Lime Soda</h3><span class="dish-price">₹89</span></div>
-          <p>Sweet, salted, or half-half.</p>
-        </div>
-        <div class="dish">
-          <img class="dish-img" src="iced-green-tea.jpg" alt="Iced Green Tea">
-      <div class="dish-top"><h3>Iced Green Tea</h3><span class="dish-price">₹99</span></div>
-          <p>Unsweetened, lightly brewed.</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
-      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
-    </div>
-    <ul class="foot-links">
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="container">
+    <p>BurgerBalanceCafe - a student project restaurant website.</p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </p>
+    <p class="copyright">Copyright 2026 BurgerBalanceCafe. Made for academic purposes.</p>
   </div>
-  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
 </footer>
 
 <script src="script.js"></script>

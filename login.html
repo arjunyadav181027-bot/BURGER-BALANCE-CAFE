@@ -3,81 +3,391 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login — BurgerBalanceCafe</title>
-<meta name="description" content="Log in to your BurgerBalanceCafe account to track orders and save your favorites.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Login - BurgerBalanceCafe</title>
+<style>
+/* BurgerBalanceCafe - stylesheet */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #b71c1c;
+  padding: 12px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Page title */
+.page-title {
+  background-color: #f2f2f2;
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-title h1 {
+  font-size: 26px;
+  color: #b71c1c;
+}
+
+.page-title p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* Sections */
+section {
+  padding: 30px 0;
+}
+
+h2 {
+  font-size: 20px;
+  color: #b71c1c;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Home banner */
+.banner {
+  background-color: #fff3e0;
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.banner h1 {
+  font-size: 28px;
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  max-width: 600px;
+  margin: 0 auto 15px auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #b71c1c;
+  color: #fff;
+  padding: 9px 16px;
+  border: none;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+  background-color: #8e1616;
+}
+
+/* Boxes (why us section) */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.box {
+  flex: 1 1 250px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fafafa;
+}
+
+/* Menu items */
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.item {
+  flex: 1 1 280px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+.item .price {
+  color: #b71c1c;
+  font-weight: bold;
+}
+
+.item .info {
+  font-size: 13px;
+  color: #777;
+}
+
+.sub-heading {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+/* Tables and lists */
+ul.simple-list {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Contact */
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.two-column > div {
+  flex: 1 1 300px;
+}
+
+.map-box {
+  border: 1px dashed #bbb;
+  background-color: #fafafa;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Forms */
+form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+form textarea {
+  height: 110px;
+}
+
+.form-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 420px;
+  background-color: #fafafa;
+}
+
+.form-note {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.form-note.ok {
+  color: #2e7d32;
+}
+
+.form-note.err {
+  color: #b71c1c;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.form-row a {
+  color: #b71c1c;
+}
+
+.small-text {
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.small-text a {
+  color: #b71c1c;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  border-top: 1px solid #555;
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  header .container {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul {
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html" class="nav-login" aria-current="page">Login</a></li>
-    </ul>
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">BurgerBalanceCafe</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-login active">Login</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<section class="hero" style="padding:60px 0 50px;">
-  <div class="wrap" style="grid-template-columns:1fr; text-align:left;">
-    <div class="hero-copy">
-      <span class="eyebrow">Welcome back</span>
-      <h1>Login</h1>
-      <p class="hero-sub">Sign in to track your orders and save your go-to build on either side of the menu.</p>
-    </div>
+<div class="page-title">
+  <div class="container">
+    <h1>Login</h1>
+    <p>Sign in to your account.</p>
   </div>
-</section>
+</div>
 
-<section class="section-cream">
-  <div class="wrap auth-wrap">
-    <div class="auth-card">
-      <h1>Sign in</h1>
-      <p class="hero-sub">Enter your details to access your account.</p>
-
+<section>
+  <div class="container">
+    <div class="form-box">
       <form id="login-form" novalidate>
-        <div class="field">
-          <label for="login-identifier">Email or Phone Number</label>
-          <input type="text" id="login-identifier" name="identifier" placeholder="you@example.com or 98765 43210" required autocomplete="username">
-        </div>
-        <div class="field">
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" name="password" required autocomplete="current-password">
-        </div>
-        <div class="field-row">
-          <label><input type="checkbox" id="remember-me" name="remember" style="width:auto;"> Remember me</label>
+        <label for="login-identifier">Email or Phone Number</label>
+        <input type="text" id="login-identifier" name="identifier" placeholder="you@example.com or 9876543210" required>
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required>
+
+        <div class="form-row">
+          <label style="margin:0;"><input type="checkbox" id="remember-me" name="remember"> Remember me</label>
           <a href="#" id="forgot-password-link">Forgot password?</a>
         </div>
-        <button type="submit" class="btn btn-flame">Log in</button>
-        <p id="login-note" class="form-note" role="status" aria-live="polite"></p>
+
+        <button type="submit" class="btn">Log In</button>
+        <p id="login-note" class="form-note"></p>
       </form>
 
-      <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+      <p class="small-text">Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <a href="index.html" class="logo">BURGERBALANCE<span class="dot">•</span>CAFE</a>
-      <p style="max-width:32ch; margin-top:10px; font-size:0.85rem;">A student project restaurant concept — bold flavor and honest portions, side by side.</p>
-    </div>
-    <ul class="foot-links">
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="container">
+    <p>BurgerBalanceCafe - a student project restaurant website.</p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </p>
+    <p class="copyright">Copyright 2026 BurgerBalanceCafe. Made for academic purposes.</p>
   </div>
-  <div class="wrap foot-bottom">© 2026 BurgerBalanceCafe. Concept project for academic purposes.</div>
 </footer>
 
 <script src="script.js"></script>
